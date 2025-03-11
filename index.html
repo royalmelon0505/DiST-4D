@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>DiST-4D: Disentangled Spatiotemporal Diffusion for 4D Driving Scene Generation</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=zh-CN&user=pWLqZnoAAAAJ" target="_blank">Jiazhe Guo<sup>1</sup></a><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?hl=zh-CN&user=gdP9StQAAAAJ" target="_blank">Yikang Ding<sup>2</sup></a><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=PVMQa-IAAAAJ" target="_blank">Xiwu Chen<sup>3</sup></a>,</span>
+                    <span class="author-block">
+                      <a href="" target="_blank">Shuo Chen<sup>1</sup></a>,</span>
+                    <span class="author-block">
+                      <a href="https://scholar.google.com/citations?hl=zh-CN&user=V-YdQiAAAAAJ" target="_blank">Bohan Li<sup>4</sup></a>,</span>
+                      <span class="author-block">
+                        <a href="https://scholar.google.com/citations?hl=zh-CN&user=3SIkncUAAAAJ" target="_blank">Yingshuang Zou<sup>1</sup></a>,</span>
+                        <span class="author-block">
+                          <a href="https://scholar.google.com/citations?user=SF7bq48AAAAJ&hl=zh-CN" target="_blank">Xiaoyang Lyu<sup>5</sup></a>,</span>
+                          <span class="author-block">
+                            <a href="https://scholar.google.com/citations?hl=zh-CN&user=KeiZBdMAAAAJ" target="_blank">Feiyang Tan<sup>3</sup></a>,</span>
+                            <span class="author-block">
+                              <a href="https://scholar.google.com/citations?hl=zh-CN&user=bGn0uacAAAAJ" target="_blank">Xiaojuan Qi<sup>5</sup></a>,</span>
+                              <span class="author-block">
+                                <a href="https://www.sigs.tsinghua.edu.cn/lzh/list.htm" target="_blank">Zhiheng Li<sup>1</sup></a>,</span>
+                                <span class="author-block">
+                                  <a href="https://scholar.google.com/citations?hl=zh-CN&user=ygQznUQAAAAJ" target="_blank">Hao Zhao<sup>1</sup></a></span>
+
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Tsinghua University</span>
+                    <span class="author-block"><sup>2</sup>MEGVII Technology</span>
+                    <span class="author-block"><sup>3</sup>Mach Drive</span>
+                    <span class="author-block"><sup>4</sup>Shanghai Jiao Tong University</span>
+                    <span class="author-block"><sup>5</sup>University of Hong Kong</span>
+                    <!-- <br>Conferance name and year</span> -->
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<!--
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Current generative models struggle to synthesize dynamic 4D driving scenes that simultaneously support temporal extrapolation and spatial novel view synthesis (NVS) without per-scene optimization. A key challenge lies in finding an efficient and generalizable geometric representation that seamlessly connects temporal and spatial synthesis. To address this, we propose DiST-4D, the first disentangled spatiotemporal diffusion framework for 4D driving scene generation, which leverages metric depth as the core geometric representation. DiST-4D decomposes the problem into two diffusion processes: DiST-T, which predicts future metric depth and multi-view RGB sequences directly from past observations, and DiST-S, which enables spatial NVS by training only on existing viewpoints while enforcing cycle consistency. This cycle consistency mechanism introduces a forward-backward rendering constraint, reducing the generalization gap between observed and unseen viewpoints. Metric depth is essential for both accurate reliable forecasting and accurate spatial NVS, as it provides a view-consistent geometric representation that generalizes well to unseen perspectives. Experiments demonstrate that DiST-4D achieves state-of-the-art performance in both temporal prediction and NVS tasks, while also delivering competitive performance in planning-related evaluations. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Overview -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <img src="static/images/Fig_ppl.png" alt="Overview pipeline"/>
+        <div class="content has-text-justified">
+          <p>
+            <b>Overall framework of the proposed DiST-4D. </b>DiST-4D is a disentangled spatiotemporal diffusion framework for 4D driving
+scene generation, leveraging metric depth as the core geometric representation to enable both temporal extrapolation and spatial novel view
+synthesis (NVS). <b>(Top: Temporal Generation)</b> DiST-T employs a diffusion model to predict future multi-camera RGB-D sequences from
+historical multi-camera images and control signals. The generated RGB-D sequences are then aggregated into point clouds, allowing for
+bullet time rendering. <b>(Bottom: Spatial Generation)</b> To enable spatial NVS, DiST-S leverages the predicted RGB-D sequences to generate
+novel viewpoints by first projecting them into sparse conditions and then refining them into dense RGB-D outputs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- DiST-T video -->
+<section class="section hero">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Temporal RGB-D Generation</h2>
+        <video poster="" id="video1" autoplay controls muted loop height="100%">
+          <!-- Your video file here -->
+          <source src="static/videos/DiST_T_videovis.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DiST-T Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container ">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/DiST_T/DiST_T_supp_1.png" alt="MY ALT TEXT"/>
+        <!-- <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2> -->
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/DiST_T/DiST_T_supp_2.png" alt="MY ALT TEXT"/>
+        <!-- <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2> -->
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/DiST_T/DiST_T_supp_3.png" alt="MY ALT TEXT"/>
+        <!-- <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2> -->
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/DiST_T/DiST_T_supp_4.png" alt="MY ALT TEXT"/>
+      <!-- <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2> -->
+     </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/DiST_T/DiST_T_supp_5.png" alt="MY ALT TEXT"/>
+        <!-- <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2> -->
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/DiST_T/DiST_T_supp_6.png" alt="MY ALT TEXT"/>
+        <!-- <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2> -->
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/DiST_T/DiST_T_supp_7.png" alt="MY ALT TEXT"/>
+        <!-- <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2> -->
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/DiST_T/DiST_T_supp_8.png" alt="MY ALT TEXT"/>
+      <!-- <h2 class="subtitle has-text-centered">
+        Second image description.
+      </h2> -->
+    </div>
+    
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<!-- DIST-S Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Spatial RGB-D Novel View Synthesis</h2>
+    </div>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/DiST_S_MM_video1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/DiST_S_MM_video2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/DiST_S_MM_video3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video4">
+          <video poster="" id="video4" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/DiST_S_MM_video4.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/DiST_S/DiST_S_supp_1.png" alt="MY ALT TEXT"/>
+        <!-- <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2> -->
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/DiST_S/DiST_S_supp_2.png" alt="MY ALT TEXT"/>
+        <!-- <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2> -->
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/DiST_S/DiST_S_supp_3.png" alt="MY ALT TEXT"/>
+        <!-- <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2> -->
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/DiST_S/DiST_S_supp_4.png" alt="MY ALT TEXT"/>
+      <!-- <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2> -->
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+
+
+
+
+
+<!-- Paper poster -->
+<!--
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+-->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+<!--
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+-->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
